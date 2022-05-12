@@ -6,7 +6,7 @@ const Hory = (props) => {
     const myMesh = useRef();
     
   
-    const gltf = useLoader(GLTFLoader, "/models/new.gltf");
+    const gltf = useLoader(GLTFLoader, "https://budiik.github.io/NFTones/models/new.gltf");
     return (
       <>
         <primitive

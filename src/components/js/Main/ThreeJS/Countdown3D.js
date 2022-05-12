@@ -27,7 +27,7 @@ function Countdown3D({ isMobile }) {
     }
   });
   function calculateTimeLeft() {
-    let futureDate = +new Date("15 March 2022 10:00:00 GMT+1") - +new Date(); // set date here <-----
+    let futureDate = +new Date("28 July 2022 10:00:00 GMT+1") - +new Date(); // set date here <-----
     let timeLeft = {};
     if (futureDate > 0) {
       timeLeft = {
@@ -48,7 +48,7 @@ function Countdown3D({ isMobile }) {
   return (
     <mesh
       rotation={[0, deg2rad(90), 0]}
-      position={[-25, isMobile ? 4 : 2, isMobile ? positionZmob : positionZnor]}
+      position={[-25, isMobile ? 4 : 0, isMobile ? positionZmob : positionZnor]}
       scale={1}
     >
       <textGeometry

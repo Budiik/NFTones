@@ -24,8 +24,8 @@ const FloppyDisc1 = (props) => {
   const Song7 = new Audio(song7)
   const songs = [Song1,Song2,Song3,Song4,Song5,Song6,Song7]
 
-
-  const gltf = useLoader(GLTFLoader, "/models/model3/scene.gltf");
+  
+  const gltf = useLoader(GLTFLoader, "https://budiik.github.io/NFTones/models/model3/scene.gltf");
   return (
     <>
       <primitive
