@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/NFTones/static/css/main.6ca339e9.css",
-    "main.js": "/NFTones/static/js/main.ec50b133.js",
+    "main.js": "/NFTones/static/js/main.91dc3cd5.js",
     "static/media/instagramlogo.png": "/NFTones/static/media/instagramlogo.7fe0f5a867e8c6e14c78.png",
     "static/media/Song8.mp3": "/NFTones/static/media/Song8.0d7e76470246b87d1eca.mp3",
     "static/media/discordlogo.png": "/NFTones/static/media/discordlogo.624ed319a0fe52f8f398.png",
@@ -15,10 +15,10 @@
     "static/media/profpic.jpg": "/NFTones/static/media/profpic.7b40e38127ed59559a71.jpg",
     "index.html": "/NFTones/index.html",
     "main.6ca339e9.css.map": "/NFTones/static/css/main.6ca339e9.css.map",
-    "main.ec50b133.js.map": "/NFTones/static/js/main.ec50b133.js.map"
+    "main.91dc3cd5.js.map": "/NFTones/static/js/main.91dc3cd5.js.map"
   },
   "entrypoints": [
     "static/css/main.6ca339e9.css",
-    "static/js/main.ec50b133.js"
+    "static/js/main.91dc3cd5.js"
   ]
 }
