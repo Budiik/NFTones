@@ -137,7 +137,7 @@ const ProjectionPlane = ({ rotation }) => {
           zIndexRange={[10, 0]}
           portal={domnodeRef}
           transform
-          position={!mobile ? [25, 0, 0] : [0, 0, -25]}
+          position={!mobile ? [25, 0, 0] : [25, 0, 0]}
           rotation={[0, deg2rad(-90), 0]}
           scale={[12, 12, 10]}
         >
