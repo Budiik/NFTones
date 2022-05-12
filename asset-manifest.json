@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/NFTones/static/css/main.5fd7c7d9.css",
-    "main.js": "/NFTones/static/js/main.30978ea1.js",
+    "main.css": "/NFTones/static/css/main.6ca339e9.css",
+    "main.js": "/NFTones/static/js/main.ec50b133.js",
+    "static/media/instagramlogo.png": "/NFTones/static/media/instagramlogo.7fe0f5a867e8c6e14c78.png",
     "static/media/Song8.mp3": "/NFTones/static/media/Song8.0d7e76470246b87d1eca.mp3",
+    "static/media/discordlogo.png": "/NFTones/static/media/discordlogo.624ed319a0fe52f8f398.png",
     "static/media/Song1.mp3": "/NFTones/static/media/Song1.92aa1bced739264d21d3.mp3",
     "static/media/Song6.mp3": "/NFTones/static/media/Song6.65a2f616d91415e7234b.mp3",
     "static/media/Song2.mp3": "/NFTones/static/media/Song2.4649318bd314d3b15e28.mp3",
@@ -10,12 +12,13 @@
     "static/media/Song7.mp3": "/NFTones/static/media/Song7.9dee256d2d94e032aa23.mp3",
     "static/media/Song3.mp3": "/NFTones/static/media/Song3.e17363c16e93d2b72f7a.mp3",
     "static/media/sunpic.png": "/NFTones/static/media/sunpic.711cb8947bbe0db9b34d.png",
+    "static/media/profpic.jpg": "/NFTones/static/media/profpic.7b40e38127ed59559a71.jpg",
     "index.html": "/NFTones/index.html",
-    "main.5fd7c7d9.css.map": "/NFTones/static/css/main.5fd7c7d9.css.map",
-    "main.30978ea1.js.map": "/NFTones/static/js/main.30978ea1.js.map"
+    "main.6ca339e9.css.map": "/NFTones/static/css/main.6ca339e9.css.map",
+    "main.ec50b133.js.map": "/NFTones/static/js/main.ec50b133.js.map"
   },
   "entrypoints": [
-    "static/css/main.5fd7c7d9.css",
-    "static/js/main.30978ea1.js"
+    "static/css/main.6ca339e9.css",
+    "static/js/main.ec50b133.js"
   ]
 }
