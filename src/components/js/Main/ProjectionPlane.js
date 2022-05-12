@@ -13,7 +13,7 @@ import sunpic from "./sunpic.png";
 import Hory1 from "./ThreeJS/Mountains.js";
 import Hory2 from "./ThreeJS/Mountains2.js";
 import Supportingplane from "./ThreeJS/Plane.js";
-
+import ProfileCard from "./UI/ProfileCard";
 
 disableScroll.on();
 
@@ -131,6 +131,21 @@ const ProjectionPlane = ({ rotation }) => {
             <WelcomeUI />
           </Card>
         </Html>
+
+        <Html
+          distanceFactor={1}
+          zIndexRange={[10, 0]}
+          portal={domnodeRef}
+          transform
+          position={!mobile ? [25, 0, 0] : [0, 0, -25]}
+          rotation={[0, deg2rad(-90), 0]}
+          scale={[12, 12, 10]}
+        >
+          <Card num={["400px", "400px"]}>
+            <ProfileCard />
+          </Card>
+        </Html>
+
         <Html
           distanceFactor={1}
           zIndexRange={[10, 0]}
