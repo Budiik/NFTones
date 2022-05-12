@@ -1,0 +1,66 @@
+
+@keyframes a {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 10% 100%;
+  }
+}
+.Header_Box h1 {
+  font-size: 2.2rem;
+  margin: 25px 0 0 25px;
+  z-index: 0;
+  position: fixed;
+  color: transparent;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 179, 255, 1) 0%,
+    rgb(173, 0, 179) 20%,
+    #831187 40%,
+    rgba(0, 179, 255, 1) 60%,
+    rgb(173, 0, 179) 80%,
+    #831187 100%
+  );
+  
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: a 5s linear infinite;
+  width: 100%;
+  font-family: "Press Start 2P", cursive;
+}
+.Header_Box > div {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LeftButton,
+.RightButton {
+  color: #8f3aff;
+  display: flex;
+  align-items: center;
+  z-index: 80;
+  background-color: transparent;
+  border: none;
+  height: 80%;
+  font-size: 4rem;
+  font-family: "Press Start 2P", cursive;
+  transition: color 0.2s, transform 0.2s;
+}
+.RightButton:active, .LeftButton:active {
+  color: rgba(0, 179, 255, 1) ;
+  transform: translateY(4px);
+}
+.RightButton p, .LeftButton p {
+  user-select: none;
+  cursor: pointer;
+  margin: 0;
+  -webkit-text-stroke: 2px black;
+}
+.RightButton p {
+  transform: scaleX(-1);
+}

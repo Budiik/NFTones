@@ -1,0 +1,23 @@
+.discord_btn {
+  display: inline-block;
+
+  font-family: Whitney, "Open Sans", Helvetica, sans-serif;
+  margin-bottom: 50px;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 45px;
+  width: 250px;
+  background: #7289da;
+  border: 2px solid #7289da;
+  color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: #22294648 0px 4px 8px 0px;
+  
+}
+.discord_btn:hover{
+  transform: translateY(-5px);
+  
+  box-shadow: #4a61b1a2 0px 15px 20px -10px;
+}

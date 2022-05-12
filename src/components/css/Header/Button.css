@@ -1,0 +1,93 @@
+.button:hover {
+  transform: translateY(-5px);
+
+  box-shadow: #4a61b1a2 0px 15px 20px -10px;
+}
+
+#creditcard {
+  /*  set start position */
+  transform: translateY(290px);
+  transition: transform 0.1s ease-in-out;
+  /*  set transition for mouse enter & exit */
+}
+
+#money {
+  /*  set start position */
+  transform: translateY(290px);
+  transition: transform 0.1s ease-in-out;
+  /*  set transition for mouse enter & exit */
+}
+
+button:hover #creditcard {
+  transform: translateY(170px);
+  transition: transform 0.2s ease-in-out;
+  /*  overide transition for mouse enter */
+}
+
+button:hover #money {
+  transform: translateY(100px);
+  transition: transform 0.3s ease-in-out;
+  /*  overide transition for mouse enter */
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* styling */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+.button {
+  outline: none;
+  margin-bottom: 6.25%;
+  position: relative;
+  border-radius: 8px;
+  letter-spacing: 0.7px;
+  background-color: #7289da;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  box-shadow: #22294648 0px 4px 8px 0px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 58px;
+  width: 100%;
+  max-width: 400px;
+  
+  border: 2px solid #7289da;
+  
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button__svg {
+  position: absolute;
+  overflow: visible;
+  bottom: 6px;
+  right: 0.2rem;
+  height: 140%;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .button div {
+    max-width: 160px;
+    height: auto;
+  }
+  .button {
+    width: 60%;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,42 @@
+.WelcomeUI {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    position: absolute;
+    text-align: center;
+}
+
+.WelcomeUI h1 {
+  margin-top: 40px;
+  font-size: 1.8rem;
+  word-spacing: -12px;
+  margin-bottom: 5px;
+  color: transparent;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 179, 255, 1) 0%,
+    rgb(173, 0, 179) 20%,
+    #831187 40%,
+    rgba(0, 179, 255, 1) 60%,
+    rgb(173, 0, 179) 80%,
+    #831187 100%
+  );
+  
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: a 5s linear infinite;
+  
+  font-family: "Press Start 2P", cursive;
+}
+.WelcomeUI a {
+  margin: 0 auto; 
+  height: 45px;
+  margin-bottom: 40px;
+}
+.WelcomeUI p {
+  margin: 0 auto;
+  
+  font-size: 1.3rem;
+  max-width: 300px;
+}
