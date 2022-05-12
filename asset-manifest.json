@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/NFTones/static/css/main.5fd7c7d9.css",
+    "main.js": "/NFTones/static/js/main.aa62d41d.js",
+    "static/media/Song8.mp3": "/NFTones/static/media/Song8.0d7e76470246b87d1eca.mp3",
+    "static/media/Song1.mp3": "/NFTones/static/media/Song1.92aa1bced739264d21d3.mp3",
+    "static/media/Song6.mp3": "/NFTones/static/media/Song6.65a2f616d91415e7234b.mp3",
+    "static/media/Song2.mp3": "/NFTones/static/media/Song2.4649318bd314d3b15e28.mp3",
+    "static/media/Song4.mp3": "/NFTones/static/media/Song4.db46b38c951488b4f84d.mp3",
+    "static/media/Song7.mp3": "/NFTones/static/media/Song7.9dee256d2d94e032aa23.mp3",
+    "static/media/Song3.mp3": "/NFTones/static/media/Song3.e17363c16e93d2b72f7a.mp3",
+    "static/media/sunpic.png": "/NFTones/static/media/sunpic.711cb8947bbe0db9b34d.png",
+    "index.html": "/NFTones/index.html",
+    "main.5fd7c7d9.css.map": "/NFTones/static/css/main.5fd7c7d9.css.map",
+    "main.aa62d41d.js.map": "/NFTones/static/js/main.aa62d41d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5fd7c7d9.css",
+    "static/js/main.aa62d41d.js"
+  ]
+}
