@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import { DoubleSide } from "three";
 
-
+/* black floor plane */
 
 const Supportingplane = () => {
     return (

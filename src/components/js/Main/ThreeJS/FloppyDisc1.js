@@ -9,12 +9,15 @@ import song5 from "./sounds/Song6.mp3"
 import song6 from "./sounds/Song7.mp3"
 import song7 from "./sounds/Song8.mp3"
 
+/* Floppy disc model loader*/
+
 const FloppyDisc1 = (props) => {
+
   const myMesh = useRef();
   useFrame(({ clock }) => {
     myMesh.current.rotation.y = clock.getElapsedTime() / 1.5;
   });
-
+  /* Loading songs */
   const Song1 = new Audio(song1)
   const Song2 = new Audio(song2)
   const Song3 = new Audio(song3)
@@ -26,6 +29,7 @@ const FloppyDisc1 = (props) => {
 
   
   const gltf = useLoader(GLTFLoader, "https://budiik.github.io/NFTones/models/model3/scene.gltf");
+
   return (
     <>
       <primitive
@@ -33,8 +37,11 @@ const FloppyDisc1 = (props) => {
         object={gltf.scene}
         scale={2}
         position={[10, 0, -25]}
-        onClick={() =>{songs[Math.floor(Math.random()*songs.length)].play()}}
-      />
+        onClick={() =>{
+            songs[Math.floor(Math.random()*songs.length)].play()
+          }
+          } 
+      />{/* Plays a random song on click */}
     </>
   );
 };

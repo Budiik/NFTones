@@ -2,6 +2,8 @@ import React, {useRef} from 'react'
 import { useFrame, useLoader } from 'react-three-fiber';
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+/* Mountains model loader */
+
 const Hory2 = (props) => {
     const myMesh = useRef();
     

@@ -14,8 +14,8 @@ const Header = () => {
             className="LeftButton"
             onClick={() => {
               setRot(rot + 1);
-            }}
-          >
+            }} 
+          >{/* Buttons to change camera rotation ↓*/}
             <p>&#60;</p>
           </div>
           <div

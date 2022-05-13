@@ -1,26 +1,27 @@
 import React, { useState } from "react";
-import Button from "../../Header/Button.js";
+import Button from "./Button.js";
 import { ethers, BigNumber } from "ethers";
 import nftones from "../json/NFTones.json";
 import '../../../css/Main/MintUI.css'
 
 const nftonesAddress = "0xc36e001AB965E72f458eAe5fC70184F454A48E95";
+
 const MintUI = ({ accounts, setAccounts }) => {
   let isConnected = Boolean(accounts[0]);
   const [mintAmount, setMintAmount] = useState(1);
   async function connectAccount() {
-    if (window.ethereum) {
+    if (window.ethereum) { // checks if metamask is connected 
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
       setAccounts(accounts);
     } else {
-      window.open("https://metamask.io/", "_blank", "noopener,noreferrer");
+      window.open("https://metamask.io/", "_blank", "noopener,noreferrer"); //if it is not it opens a metamast login screen
     }
   }
   const price = 0.1
-  async function handleMint() {
-    if (window.ethereum) {
+  async function handleMint() { // handles the mint itself, connects to ethereum and transfers the NFT
+    if (window.ethereum) { 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(nftonesAddress, nftones.abi, signer);
@@ -34,7 +35,7 @@ const MintUI = ({ accounts, setAccounts }) => {
   }
   const handleDecrement = () => {
     if (mintAmount <= 1) return;
-    setMintAmount(mintAmount - 1);
+    setMintAmount(mintAmount - 1); // changes the number to mint ↓
   };
   const handleIncrement = () => {
     if (mintAmount >= 3) return;

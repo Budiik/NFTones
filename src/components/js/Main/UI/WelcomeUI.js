@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../../css/Main/WelcomeUI.css'
-
+/* the welcome screen html (first one you see) */ 
 const WelcomeUI = () => {
   return (
     <div className='WelcomeUI'>

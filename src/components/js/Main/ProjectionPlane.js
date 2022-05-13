@@ -1,3 +1,5 @@
+/* Main plane where all components are placed */
+
 import React, { Suspense, useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 import "../../css/Main/Canvas.css";
@@ -10,27 +12,40 @@ import { Html, Stars, Loader, Plane } from "@react-three/drei";
 import disableScroll from "disable-scroll";
 import FloppyDisc1 from "./ThreeJS/FloppyDisc1";
 import sunpic from "./sunpic.png";
-import Hory1 from "./ThreeJS/Mountains.js";
-import Hory2 from "./ThreeJS/Mountains2.js";
+import Mountainsgltf1 from "./ThreeJS/Mountains.js";
+import Mountainsgltf2 from "./ThreeJS/Mountains2.js";
 import Supportingplane from "./ThreeJS/Plane.js";
 import ProfileCard from "./UI/ProfileCard";
 
 disableScroll.on();
 
+/*Converts degrees to radians, as three works with radians*/
 const deg2rad = (degrees) => degrees * (Math.PI / 180);
 
+
 function CameraObject({ rot }) {
-  const xposar = [0, 1, 0, -1];
+
+  /*Camera movement around [0,0,0] while looking at [0,0,0]*/
+  /*
+        · → ·
+        ↑ · ↓
+        . ← .
+  */
+  /* takes in rot, and calculates its next position then moves the camera acordingly*/
+
+  const xposar = [0, 1, 0, -1]; //correct moving order ↓
   const zposar = [1, 0, -1, 0];
   const xposarrev = [0, -1, 0, 1];
   const zposarrev = [1, 0, -1, 0];
+
   const vec = new THREE.Vector3();
   useFrame((state) => {
     const step = 0.1;
+    
     const x = rot >= 0 ? xposar[rot % 4] : xposarrev[Math.abs(rot % 4)];
     const y = 0;
     const z = rot >= 0 ? zposar[rot % 4] : zposarrev[Math.abs(rot % 4)];
-    state.camera.position.lerp(vec.set(x, y, z), step);
+    state.camera.position.lerp(vec.set(x, y, z), step); // sets the camera position to calculated place
     state.camera.lookAt(0, 0, 0);
     state.camera.updateProjectionMatrix();
   });
@@ -38,8 +53,8 @@ function CameraObject({ rot }) {
 }
 
 const Light = (props) => {
+  /* Point light for visibility */
   const pointLight = useRef();
-  /*useHelper(pointLight, THREE.PointLightHelper, 0.5, "hotpink");*/
   return (
     <>
       <pointLight
@@ -54,23 +69,23 @@ const Light = (props) => {
 const ProjectionPlane = ({ rotation }) => {
   const [accounts, setAccounts] = useState([]); //metamask setup
   const domnodeRef = useRef(); //inner html render
-  const [mobile, setMobile] = useState();
-  const [FOV, setFOV] = useState();
+  const [mobile, setMobile] = useState(); //mobile device
+  const [FOV, setFOV] = useState(); //camera Field Of View dynamicly set depending on screen size
   const [size, setSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
-  });
+  }); //window size
 
   const checkSize = () => {
     setSize({ width: window.innerWidth, height: window.innerHeight });
-  };
+  }; 
 
   useEffect(() => {
     window.addEventListener("resize", checkSize);
     return () => {
       window.removeEventListener("resize", checkSize);
     };
-  }, []);
+  }, []); // chcecks if the window was resized 
 
   useEffect(() => {
     if (size.width < 1000) {
@@ -85,7 +100,7 @@ const ProjectionPlane = ({ rotation }) => {
     } else {
       setFOV(55);
     }
-  }, [size]);
+  }, [size]); //sets FOV depending on the window size
   return (
     <>
       <Canvas
@@ -98,13 +113,13 @@ const ProjectionPlane = ({ rotation }) => {
           far: 400,
           position: [0, 0, 1],
         }}
-      >
+      > {/* main canvas where everighing is placed*/}
 
         
-        <ambientLight args={["white", 1]} />
-        <fogExp2 attach="fog" args={["#570296", 0.003]} />
+        <ambientLight args={["white", 1]} /> {/* lighting*/}
+        <fogExp2 attach="fog" args={["#570296", 0.003]} /> {/* Fog for redused visibility in further parts of canvas*/}
         
-        <Supportingplane></Supportingplane>
+        <Supportingplane></Supportingplane> {/* black floor */}
 
 
         <Html
@@ -116,7 +131,7 @@ const ProjectionPlane = ({ rotation }) => {
           rotation={[0, deg2rad(90), 0]}
         >
           <img src={sunpic}></img>
-        </Html>
+        </Html> {/* sun html component*/}
 
         
         <Html
@@ -130,7 +145,7 @@ const ProjectionPlane = ({ rotation }) => {
           <Card num={["400px", "400px"]}>
             <WelcomeUI />
           </Card>
-        </Html>
+        </Html> {/* Welcome tab  */}
 
         <Html
           distanceFactor={1}
@@ -144,7 +159,7 @@ const ProjectionPlane = ({ rotation }) => {
           <Card num={["400px", "400px"]}>
             <ProfileCard />
           </Card>
-        </Html>
+        </Html> {/* Card with the manager profile*/}
 
         <Html
           distanceFactor={1}
@@ -158,13 +173,9 @@ const ProjectionPlane = ({ rotation }) => {
           <Card num={!mobile ? ["800px", "400px"] : ["400px", "400px"]}>
             <MintUI accounts={accounts} setAccounts={setAccounts} />
           </Card>
-        </Html>
-        {/*<Spotlight
-          lst={["#b30086", 5, 6, Math.PI / 3, 0.5, 0]}
-          pos={[0, 28, 0]}
-          rot={rotation}
-        />*/}
-        <Light colr="#7289da" int={3} pos={[-24, 5, 0]} />
+        </Html> {/* Minting card */}
+
+        <Light colr="#7289da" int={3} pos={[-24, 5, 0]} /> {/* Second light */}
         <Stars
           radius={100}
           depth={100}
@@ -172,12 +183,12 @@ const ProjectionPlane = ({ rotation }) => {
           factor={4}
           saturation={0}
           fade
-        />
+        /> {/* Background stars*/}
         <Suspense fallback={null}>
           {!mobile && <FloppyDisc1 />}
-          <Hory1></Hory1>
-          <Hory2></Hory2>
-        </Suspense>
+          <Mountainsgltf1></Mountainsgltf1> {/* Background mountains */}
+          <Mountainsgltf2></Mountainsgltf2> 
+        </Suspense> {/* suspense is used to display gltf 3d models */}
 
           
 
@@ -187,7 +198,7 @@ const ProjectionPlane = ({ rotation }) => {
         <gridHelper
           args={[1000, 80, "#b30086", "#b30086"]}
           position={[0, -8, 0]}
-        />
+        /> {/* Floor grid */}
         <Html
           distanceFactor={1}
           zIndexRange={[10, 0]}
@@ -208,9 +219,9 @@ const ProjectionPlane = ({ rotation }) => {
               Time remaining until next NFTones drop!
             </p>
           </Card>
-        </Html>
-        <Countdown3D isMobile={mobile} />
-        <CameraObject rot={rotation} />
+        </Html> {/* Drop timer info card */}
+        <Countdown3D isMobile={mobile} /> {/* Drop timer */}
+        <CameraObject rot={rotation} /> {/* Camera placed in canvas */}
       </Canvas>
       <Loader />
     </>

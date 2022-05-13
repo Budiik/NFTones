@@ -2,7 +2,9 @@ import React, {useRef} from 'react'
 import { useFrame, useLoader } from 'react-three-fiber';
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const Hory = (props) => {
+/* Mountain model loader */
+
+const Hory1 = (props) => {
     const myMesh = useRef();
     
   
@@ -20,4 +22,4 @@ const Hory = (props) => {
   };
   
   
-  export default Hory
+  export default Hory1

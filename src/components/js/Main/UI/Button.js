@@ -1,5 +1,7 @@
 import React from 'react'
-import '../../css/Header/Button.css'
+import '../../../css/Header/Button.css'
+
+/* animated wallet button  */
 
 const Button = ({text, onclick}) => {
  
